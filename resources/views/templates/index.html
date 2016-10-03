@@ -1,0 +1,73 @@
+
+<h4>{{ title }}</h4>
+<div class="input-field">
+<i class="material-icons prefix">search</i> <input type="text" placeholder="Buscar Productos">
+</div><br>
+<table class="hoverable bordered">
+  <thead>
+  	<tr>
+  		<th class="text-align-center">Id</th>
+  		<th class="width-30-pct">Titulo</th>
+  		<th class="width-30-pct">Descripcion</th>
+      <th class="text-align-center">Precio</th>
+      <th class="text-align-center">Categoria</th>
+  		<th class="text-align-center">Accion</th>
+  	</tr>
+  </thead>
+  <tbody>
+  	<tr>
+  	   <td class="text-align-center"></td>
+  	   <td></td>
+  	   <td></td>
+       <td class="text-align-center"></td>
+       <td class="text-align-center"></td>
+  	   <td class="link-action">
+  	   	 <a class="waves-effect waves-light btn modal-trigger" ng-click="showEditProduct()"><i class="material-icons left">edit</i></a>
+  	   	 <a class="waves-effect waves-light btn"><i class="material-icons left">delete</i></a>
+  	   </td>	
+  	</tr>
+  </tbody>
+</table>
+
+<!-- modal para crear nuevo producto-->
+<div id="modal-product-form" class="modal">
+  <div class="modal-content">
+     <h4 id="modal-product-title"></h4>
+       <div class="row">
+         <div class="input-field col s4">          
+           <input type="text" ng-model="name" class="validate"/>
+           <label for="name" data-error="wrong">Nombre</label>
+         </div>        
+         <div class="input-field col s4">                 
+           <input type="text" ng-model="price" class="validate" id="form-price"/>
+           <label for="price">Precio</label>    
+         </div>         
+          <div class="input-field col s4">
+            <select class="browser-default">
+              <option value="" disabled selected>Elegir Categoria</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>             
+             </select>             
+          </div>
+         </div>
+         <div class="row">
+          <div class="input-field col s12">                   
+          <textarea type="text" ng-model="description" class="validate materialize-textarea"></textarea> 
+          <label for="description" data-error="wrong">Descripcion</label>           
+         </div>
+         </div>
+         <div class="input-field col s12">
+          <a  id="btn-create-product" class="waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">add</i>Crear</a>
+          <a  id="btn-update-product" class="waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">edit</i>Guardar Cambios</a>
+          <a class="modal-action modal-close waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">close</i>Cerrar</a>
+         </div>
+       
+  </div>
+</div>
+<!-- boton flotante para creacion de producto-->
+<div class="fixed-action-btn" style="bottom:45px;right:24px;">
+  <a class="waves-effect waves-light btn modal-trigger btn-floating btn-large red" ng-click="showCreateProduct()"><i class="large material-icons">add</i></a>
+</div>
+
+
